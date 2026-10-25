@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.spec
+
+# PyInstaller / build output
+build/
+dist/
+
+# Local logs and settings
+logs/
+*.log
+
+# Bundled core (downloaded by tools/fetch_singbox.ps1)
+vendor/*.exe
+
+# OS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,3 @@
+# Runtime has no third-party dependencies (Python standard library + Tkinter).
+# Only needed to build the standalone Windows package.
+pyinstaller==6.22.3

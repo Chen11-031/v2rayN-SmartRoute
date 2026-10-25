@@ -1,0 +1,45 @@
+v2rayN 智能选线 · 快速上手
+==========================
+
+一、这是什么
+------------
+读取 v2rayN 的节点库，真实测延迟和下载速度，自动选出综合最好的节点，
+然后重启 v2rayN 并启用它。切换失败会自动恢复原来的节点。
+
+二、怎么用
+----------
+1. 双击 V2rayN-SmartRoute.exe。
+2. 确认顶部显示的 v2rayN 路径正确；不对就点“浏览”选择 v2rayN.exe 所在文件夹。
+3. 模式保持“综合最优（推荐）”即可。
+4. 点“⚡ 一键测速并启用最优节点”。
+5. 等待约 1～2 分钟。测速完成后 v2rayN 会自动关闭、重启并切换到最优节点。
+6. 看到“已启用”就完成了。
+
+只想看测速结果：勾选“只测速，不切换”。
+想手动换：在结果列表选中一个可用节点，点“启用选中节点”。
+
+三、注意事项
+------------
+- 测速期间不会影响当前节点；只有最后切换重启的十几秒会短暂断网。
+- 默认会保持 v2rayN 当前的 Windows 系统代理设置。
+- 自签证书的 Hysteria2 节点会先弹窗确认，只在确认后对该节点开启 allowInsecure。
+- 订阅过期或节点失效会导致部分节点测速失败，这是正常的，失败的节点不会被选中。
+
+四、关于 sing-box 核心
+----------------------
+v2rayN 7.10.4 自带的 sing-box 1.13+ 无法启动它自己生成的 Hysteria2 配置。
+本程序在启用 Hysteria2/TUIC 时，会自动把 sing-box 换成程序自带的 1.12.9：
+  - 原核心备份在：%LOCALAPPDATA%\V2rayNSmartRoute\core-backups\
+  - Xray 节点不受影响
+  - 如果 v2rayN 以后又更新了核心，下次启用 Hysteria2 时会再次自动处理
+
+五、出问题看哪里
+----------------
+配置/数据库备份：
+  %LOCALAPPDATA%\V2rayNSmartRoute\backups\
+失败现场（配置 + v2rayN 日志）：
+  %LOCALAPPDATA%\V2rayNSmartRoute\backups\<时间戳>\diagnostics\
+运行日志：
+  %LOCALAPPDATA%\V2rayNSmartRoute\logs\smartroute.log
+
+更多说明见同目录 README.md。
